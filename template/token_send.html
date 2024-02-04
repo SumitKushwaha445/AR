@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta charset = "UTF-8">
+        <meta http-equiv="X-UA Compatible" content="IE=edge">
+        <meta  name="viewport" content="width=device-width,initial-scale = 1.0"> 
+        <title>Login Form</title>
+        {% load static %}
+
+        <link rel="stylesheet" href={% static 'token_send.css' %}>
+        
+    </head>
+
+
+    <body>
+        <section>
+        <div class="token-box">
+            {% if messages %}
+                    
+                    {% for message in messages %}
+                    <div class = "alert alert-info">
+                        {{message}}
+                    </div>
+                {% endfor %}
+
+            <form action="#" method="post">
+                {% csrf_token %}
+
+                <h2>We Have Sent An Email To You</h2> 
+                <h3>Please Check Your Mail</h3> 
+                
+            </form>
+            {% endif %}
+        </div>
+        </section>
+        
+        
+    </body>
+</html>
